@@ -86,11 +86,6 @@ def register_app_error_cb(error):
 
 
 class Gr0GS1Service(Service):
-    """
-    Dummy test service that provides characteristics and descriptors that
-    exercise various API functionality.
--
-    """
 
     GR0G_SVC_STATUS_UUID = "00001802-0000-1000-8000-00805f9b38fb"
 
@@ -99,10 +94,10 @@ class Gr0GS1Service(Service):
         #self.add_characteristic(FanControlCharacteristic(bus, 0, self))
         self.add_characteristic(LightCharacteristic(bus, 1, self))
         self.add_characteristic(LightControlCharacteristic(bus, 2, self))
-        #self.add_characteristic(TemperatureCharacteristic(bus, 3, self))
-        #self.add_characteristic(TemperatureSetpointCharacteristic(bus, 4, self))
-        #self.add_characteristic(HumidityCharacteristic(bus, 5, self))
-        #self.add_characteristic(HumiditySetpointCharacteristic(bus, 6, self))
+        self.add_characteristic(TemperatureCharacteristic(bus, 3, self))
+        self.add_characteristic(TemperatureSetpointCharacteristic(bus, 4, self))
+        self.add_characteristic(HumidityCharacteristic(bus, 5, self))
+        self.add_characteristic(HumiditySetpointCharacteristic(bus, 6, self))
 
 class FanControlCharacteristic(Characteristic):
     uuid = "304cf226-411e-11eb-b378-0242ac130002"
